@@ -1,2 +1,2 @@
 # auro-web
-web de auro para muestra
+Sitio web institucional de AURO SRL
