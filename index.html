@@ -1,118 +1,450 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURO SRL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>AURO SRL | Ingeniería y Construcción</title>
 
-        body{
-            margin:0;
-            font-family:Arial, sans-serif;
-            line-height:1.6;
-            color:#333;
-        }
+https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap
 
-        header{
-            background:#1d3557;
-            color:white;
-            text-align:center;
-            padding:100px 20px;
-        }
+<style>
 
-        header h1{
-            font-size:3rem;
-            margin-bottom:10px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        section{
-            max-width:1100px;
-            margin:auto;
-            padding:60px 20px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .services{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+body{
+    font-family:'Inter',sans-serif;
+    color:#333;
+    line-height:1.6;
+}
 
-        .card{
-            background:#f5f5f5;
-            padding:25px;
-            border-radius:10px;
-        }
+/* NAVBAR */
 
-        footer{
-            background:#1d3557;
-            color:white;
-            text-align:center;
-            padding:30px;
-        }
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(10,20,40,.92);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+}
 
-    </style>
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    color:white;
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#d4af37;
+    color:black;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:700;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:#1d3557;
+}
+
+/* ABOUT */
+
+.about{
+    background:#fff;
+}
+
+.about p{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-radius:12px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1d3557;
+}
+
+/* VALUES */
+
+.values{
+    background:#f5f7fa;
+}
+
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.value{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.project{
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.project img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-title{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,.7);
+    color:white;
+    padding:15px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#1d3557;
+    color:white;
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b1729;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    nav ul{
+        display:none;
+    }
+}
+
+</style>
 
 </head>
 
 <body>
 
-<header>
-    <h1>AURO SRL</h1>
-    <h2>Ingeniería · Construcción · Gerenciamiento</h2>
-    <p>Construimos confianza.</p>
-</header>
+<nav>
 
-<section>
+<div class="nav-container">
 
-    <h2>Acerca de Nosotros</h2>
+<div class="logo">AURO SRL</div>
 
-    <p>
-        Somos una empresa dedicada a la ingeniería, elaboración y ejecución
-        de proyectos, comprometida con la transparencia, la calidad y la innovación.
-    </p>
+<ul>
+<li>#aboutNosotros</a></li>
+<li>#servicesServicios</a></li>
+<li>#projectsProyectos</a></li>
+<li>#valuesValores</a></li>
+<li>#contactContacto</a></li>
+</ul>
 
-</section>
+</div>
 
-<section>
+</nav>
 
-    <h2>Servicios</h2>
+<section class="hero">
 
-    <div class="services">
+<div class="hero-content">
 
-        <div class="card">
-            <h3>Ingeniería</h3>
-            <p>Desarrollo y análisis de proyectos de ingeniería.</p>
-        </div>
+<h1>Construimos Confianza</h1>
 
-        <div class="card">
-            <h3>Construcción</h3>
-            <p>Ejecución de obras civiles e industriales.</p>
-        </div>
+<p>
+Ingeniería, gerenciamiento y construcción con transparencia,
+innovación y visión de futuro.
+</p>
 
-        <div class="card">
-            <h3>Gerenciamiento</h3>
-            <p>Planificación, coordinación y control de proyectos.</p>
-        </div>
+#services
+Conocer Servicios
+</a>
 
-    </div>
+</div>
 
 </section>
 
-<section>
+<section id="about" class="about">
 
-    <h2>Misión</h2>
+<div class="container">
 
-    <p>
-        Desarrollar proyectos con transparencia y brindar calidad a nuestros clientes.
-    </p>
+<div class="section-title">
+<h2>Acerca de Nosotros</h2>
+</div>
+
+<p>
+
+AURO es una empresa dedicada a la ingeniería, elaboración y ejecución
+de proyectos. Nace del esfuerzo constante, la experiencia en el terreno
+y una firme convicción: construir con transparencia, compromiso y visión
+de futuro. Nuestro objetivo es aportar valor real mediante soluciones
+innovadoras y relaciones de confianza. 【1-937b62】
+
+</p>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Nuestros Servicios</h2>
+</div>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>Ingeniería</h3>
+<p>
+Desarrollo de proyectos, estudios técnicos,
+análisis estructural y planificación.
+</p>
+</div>
+
+<div class="card">
+<h3>Gerenciamiento</h3>
+<p>
+Dirección integral de proyectos,
+control de plazos, costos y calidad.
+</p>
+</div>
+
+<div class="card">
+<h3>Construcción</h3>
+<p>
+Ejecución de obras civiles, industriales
+e infraestructura.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Áreas de Desarrollo</h2>
+</div>
+
+<div class="projects-grid">
+
+<div class="project">
+https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1200
+<div class="project-title">
+Infraestructura
+</div>
+</div>
+
+<div class="project">
+https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200
+<div class="project-title">
+Construcción Industrial
+</div>
+</div>
+
+<div class="project">
+https://images.unsplash.com/photo-1517022812141-23620dba5c23?q=80&w=1200
+<div class="project-title">
+Minería y Energía
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="values" class="values">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Misión, Visión y Valores</h2>
+</div>
+
+<div class="values-grid">
+
+<div class="value">
+<h3>Misión</h3>
+<p>
+Desarrollar proyectos con transparencia y brindar calidad a nuestros clientes. 【1-937b62】
+</p>
+</div>
+
+<div class="value">
+<h3>Visión</h3>
+<p>
+Mantenernos a la vanguardia mediante tecnologías y metodologías innovadoras. 【1-937b62】
+</p>
+</div>
+
+<div class="value">
+<h3>Valores</h3>
+<p>
+Honestidad, integridad, respeto, calidad, innovación, mejora continua y sostenibilidad. 【1-937b62】
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2>Contacto</h2>
+
+<br>
+
+<p>
+Email: contacto@auro.com.ar
+</p>
+
+<p>
+Teléfono: +54 9 XXX XXX XXXX
+</p>
+
+</div>
 
 </section>
 
 <footer>
 
-    <p>AURO SRL © 2026</p>
+<p>
+AURO SRL © 2026 - Ingeniería y Construcción
+</p>
 
 </footer>
 
