@@ -158,6 +158,23 @@
             font-size: 1.1rem;
         }
 
+        /* VALUES */
+        .values {
+            background: #f5f7fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .value {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
         /* SERVICES */
         .services-grid {
             display: grid;
@@ -180,23 +197,6 @@
         .card h3 {
             margin-bottom: 15px;
             color: #1d3557;
-        }
-
-        /* VALUES */
-        .values {
-            background: #f5f7fa;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .value {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
         }
 
         /* PROJECTS */
@@ -235,6 +235,18 @@
             text-align: center;
         }
 
+        .contact-email {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-email:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
         /* ESTILOS BOTONES DE CONTACTO */
         .whatsapp-btn, .instagram-btn {
             display: inline-flex;
@@ -243,7 +255,7 @@
             gap: 10px;
             padding: 12px 25px;
             text-decoration: none;
-            border-radius: 25px; /* Bordes redondeados modernos estilo píldora */
+            border-radius: 25px;
             font-weight: 600;
             font-size: 0.95rem;
             margin-top: 8px;
@@ -298,14 +310,14 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="./assets/AURO2.0.png" alt="Logo AURO SRL">
+                <img src="assets/AURO2.0.png" alt="Logo AURO SRL">
                 <span>AURO SRL</span>
             </div>
             <ul>
                 <li><a href="#about">Nosotros</a></li>
+                <li><a href="#values">Valores</a></li>
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#values">Valores</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
@@ -333,6 +345,29 @@
                 de futuro. Nuestro objetivo es aportar valor real mediante soluciones
                 innovadoras y relaciones de confianza.
             </p>
+        </div>
+    </section>
+
+    <!-- VALORES (REUBICADO AQUÍ) -->
+    <section id="values" class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión, Visión y Valores</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value">
+                    <h3>Misión</h3>
+                    <p>Desarrollar proyectos con transparencia y brindar calidad a nuestros clientes.</p>
+                </div>
+                <div class="value">
+                    <h3>Visión</h3>
+                    <p>Mantenernos a la vanguardia mediante tecnologías y metodologías innovadoras.</p>
+                </div>
+                <div class="value">
+                    <h3>Valores</h3>
+                    <p>Honestidad, integridad, respeto, calidad, innovación, mejora continua y sostenibilidad.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -405,29 +440,6 @@
         </div>
     </section>
 
-    <!-- VALORES -->
-    <section id="values" class="values">
-        <div class="container">
-            <div class="section-title">
-                <h2>Misión, Visión y Valores</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value">
-                    <h3>Misión</h3>
-                    <p>Desarrollar proyectos con transparencia y brindar calidad a nuestros clientes.</p>
-                </div>
-                <div class="value">
-                    <h3>Visión</h3>
-                    <p>Mantenernos a la vanguardia mediante tecnologías y metodologías innovadoras.</p>
-                </div>
-                <div class="value">
-                    <h3>Valores</h3>
-                    <p>Honestidad, integridad, respeto, calidad, innovación, mejora continua y sostenibilidad.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- NOVEDADES -->
     <section id="novedades">
         <div class="container">
@@ -466,14 +478,13 @@
             <br><br>
 
             <p>Seguinos en Redes Sociales</p>
-            <!-- REEMPLAZA EL LINK DE ABAJO CON EL DE TU PERFIL REAL -->
             <a href="https://instagram.com/auro.ar" target="_blank" class="instagram-btn">
                 <i class="fa-brands fa-instagram"></i> Instagram AURO
             </a>
             <br><br>
 
-            <p>marcelo.sotomayor@auro.ar</p>
-            <p>aldo.ledesma@auro.ar</p>
+            <p><a href="mailto:marcelo.sotomayor@auro.ar" class="contact-email">marcelo.sotomayor@auro.ar</a></p>
+            <p><a href="mailto:aldo.ledesma@auro.ar" class="contact-email">aldo.ledesma@auro.ar</a></p>
         </div>
     </section>
 
