@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -51,6 +54,15 @@
             font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
         nav ul {
@@ -223,6 +235,44 @@
             text-align: center;
         }
 
+        /* ESTILOS BOTONES DE CONTACTO */
+        .whatsapp-btn, .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px; /* Bordes redondeados modernos estilo píldora */
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 8px;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2);
+        }
+
+        .instagram-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
+        }
+
         /* FOOTER */
         footer {
             background: #0b1729;
@@ -247,7 +297,10 @@
     <!-- MENÚ DE NAVEGACIÓN -->
     <nav>
         <div class="nav-container">
-            <div class="logo">AURO SRL</div>
+            <div class="logo">
+                <img src="./assets/AURO2.0.png" alt="Logo AURO SRL">
+                <span>AURO SRL</span>
+            </div>
             <ul>
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#services">Servicios</a></li>
@@ -262,7 +315,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Construimos Confianza</h1>
-            <p>Ingeniería, gerenciamiento y construcción con transparencia, innovación y visión de futuro.</p>
+            <p>Ingeniería, Construcción y Gerenciamiento de Proyectos para los sectores Industrial, Minero y Energético.</p>
             <a href="#services" class="btn">Conocer Servicios</a>
         </div>
     </section>
@@ -310,7 +363,7 @@
     <section id="projects">
         <div class="container">
             <div class="section-title">
-                <h2>Áreas de Desarrollo</h2>
+                <h2>Sectores en los que Trabajamos</h2>
             </div>
             <div class="projects-grid">
                 <div class="project">
@@ -324,6 +377,29 @@
                 <div class="project">
                     <img src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?q=80&w=1200" alt="Minería y Energía">
                     <div class="project-title">Minería y Energía</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- OBRAS EN EJECUCIÓN -->
+    <section id="obras">
+        <div class="container">
+            <div class="section-title">
+                <h2>Obras en Ejecución</h2>
+            </div>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Proyecto 1</h3>
+                    <p>Información de la obra en ejecución.</p>
+                </div>
+                <div class="card">
+                    <h3>Proyecto 2</h3>
+                    <p>Información de la obra en ejecución.</p>
+                </div>
+                <div class="card">
+                    <h3>Proyecto 3</h3>
+                    <p>Información de la obra en ejecución.</p>
                 </div>
             </div>
         </div>
@@ -352,13 +428,52 @@
         </div>
     </section>
 
+    <!-- NOVEDADES -->
+    <section id="novedades">
+        <div class="container">
+            <div class="section-title">
+                <h2>Novedades</h2>
+            </div>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Noticia 1</h3>
+                    <p>Próximamente.</p>
+                </div>
+                <div class="card">
+                    <h3>Noticia 2</h3>
+                    <p>Próximamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACTO -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contacto</h2>
             <br>
-            <p>Email: contacto@auro.com.ar</p>
-            <p>Teléfono: +54 9 XXX XXX XXXX</p>
+            
+            <p></p>
+            <a href="https://wa.me/5493815431313" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Marcelo Sotomayor
+            </a>
+            <br><br>
+            
+            <p>Aldo Ledesma</p>
+            <a href="https://wa.me/5493834930254" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Aldo Ledesma
+            </a>
+            <br><br>
+
+            <p>Seguinos en Redes Sociales</p>
+            <!-- REEMPLAZA EL LINK DE ABAJO CON EL DE TU PERFIL REAL -->
+            <a href="https://instagram.com/auro.ar" target="_blank" class="instagram-btn">
+                <i class="fa-brands fa-instagram"></i> Instagram AURO
+            </a>
+            <br><br>
+
+            <p>marcelo.sotomayor@auro.ar</p>
+            <p>aldo.ledesma@auro.ar</p>
         </div>
     </section>
 
