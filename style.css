@@ -1,4 +1,5 @@
-<style>* {
+/* RESET & GENERALES */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,10 +13,30 @@ body {
     font-family: 'Inter', sans-serif;
     color: #333;
     line-height: 1.6;
+    background: #fff;
+}
+
+section {
+    padding: 100px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #1d3557;
+    font-weight: 800;
 }
 
 /* NAVBAR */
-
 nav {
     position: fixed;
     top: 0;
@@ -34,7 +55,6 @@ nav {
     padding: 20px;
 }
 
-
 .logo {
     display: flex;
     align-items: center;
@@ -50,11 +70,11 @@ nav {
     width: auto;
 }
 
-
 nav ul {
     display: flex;
     list-style: none;
     gap: 30px;
+    align-items: center;
 }
 
 nav a {
@@ -63,12 +83,24 @@ nav a {
     font-weight: 500;
 }
 
-/* HERO */
+.btn-nav-cotizar {
+    background: #1d3557;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
 
+.btn-nav-cotizar:hover {
+    background: #2a4975;
+    transform: translateY(-1px);
+}
+
+/* HERO & BOTÓN GLOBAL COMPARTIDO */
 .hero {
     height: 100vh;
-    background:
-        linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
         url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');
     background-size: cover;
     background-position: center;
@@ -94,6 +126,7 @@ nav a {
     margin-bottom: 30px;
 }
 
+/* Formato compartido para Conocer Servicios y Solicitar Cotización */
 .btn {
     display: inline-block;
     background: #d4af37;
@@ -102,31 +135,15 @@ nav a {
     text-decoration: none;
     border-radius: 5px;
     font-weight: 700;
+    transition: background 0.3s, transform 0.3s;
 }
 
-/* SECTIONS */
-
-section {
-    padding: 100px 20px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    color: #D4AF37;
+.btn:hover {
+    background: #c29e2e;
+    transform: translateY(-2px);
 }
 
 /* ABOUT */
-
 .about {
     background: #fff;
 }
@@ -138,33 +155,7 @@ section {
     font-size: 1.1rem;
 }
 
-/* SERVICES */
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    padding: 35px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
-    border-radius: 12px;
-    transition: .3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: #D4AF37;
-}
-
-/* VALUES */
-
+/* VALORES */
 .values {
     background: #f5f7fa;
 }
@@ -179,42 +170,124 @@ section {
     background: white;
     padding: 25px;
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .04);
 }
 
-/* PROJECTS */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+.value h3 {
+    margin-bottom: 15px;
+    color: #1d3557;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-.project {
-    position: relative;
-    overflow: hidden;
+/* SERVICIOS */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+    border-radius: 12px;
+    transition: .3s;
+    flex: 1 1 280px;   /* <--- AGREGAR ESTA LÍNEA */
+    max-width: 380px;  /* <--- AGREGAR ESTA LÍNEA (Evita que una tarjeta sola ocupe todo el ancho) */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #1d3557;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.service-card {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+/* Iconos unificados con el azul corporativo */
+.service-card i {
+    font-size: 3rem;
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    color: #666;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: #f5f7fa;
     border-radius: 12px;
 }
 
-.project img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
+.services-cta p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #444;
 }
 
-.project-title {
+/* PROYECTOS / SECTORES (TAMAÑO REDUCIDO) */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sector {
+    height: 240px; /* Reducido de 320px */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: .4s;
+    flex: 1 1 240px;
+    max-width: 360px;
+}
+
+.sector:hover {
+    transform: translateY(-5px);
+}
+
+.sector-overlay {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, .7);
-    color: white;
-    padding: 15px;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0, .75));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
 }
 
-/* SECCIÓN CONTACTO - ALTO CONTRASTE */
+.sector-overlay h3 {
+    color: white;
+    font-size: 1.5rem; /* Ajustado proporcionalmente al nuevo tamaño */
+    font-weight: 700;
+}
+
+.mineria { background-image: url('assets/mineria.jpg'); }
+.industrial { background-image: url('assets/industrial.jpg'); }
+.energia { background-image: url('assets/energia.jpg'); }
+.infraestructura { background-image: url('assets/infraestructura.jpg'); }
+.comercial { background-image: url('assets/comercial.jpg'); }
+.residential { background-image: url('assets/residencial.jpg'); }
+
+/* CONTACTO - FONDO AZUL NOCHE */
 .contact {
-    background: #1d3557;
-    /* El azul oscuro de fondo */
+    background: #14213D; /* Restaurado al fondo original antes del footer */
     color: white;
     text-align: center;
     padding: 90px 20px;
@@ -224,20 +297,22 @@ section {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: white;
+    font-weight: 800;
 }
 
 .contact-buttons-container {
     max-width: 600px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estilo de botón para garantizar máxima legibilidad del texto blanco */
 .contact-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    /* Más espacio entre icono y texto */
     padding: 14px 30px;
     text-decoration: none;
     border-radius: 25px;
@@ -245,17 +320,12 @@ section {
     font-size: 1.1rem;
     margin: 12px;
     color: #ffffff !important;
-    /* LETRAS ESTRICTAMENTE BLANCAS */
     background: rgba(255, 255, 255, 0.06);
-    /* Fondo sutil para dar forma al botón */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Borde fino que delimita el botón */
     min-width: 290px;
-    /* Un poco más ancho para los iconos grandes */
     transition: all 0.3s ease;
 }
 
-/* Animación suave al pasar el mouse */
 .contact-btn:hover {
     transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.15);
@@ -263,36 +333,17 @@ section {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* ICONOS MÁS GRANDES */
 .contact-btn i {
     font-size: 1.7rem;
-    /* Tamaño de icono ampliado */
     display: inline-block;
 }
 
-/* COLORES EXCLUSIVOS PARA LOS ICONOS */
-.contact-btn.whatsapp i {
-    color: #25D366;
-    /* Verde WhatsApp oficial */
-}
-
-.contact-btn.instagram i {
-    color: #f857a6;
-    /* Rosa vibrante de Instagram */
-}
-
-.contact-btn.email i {
-    color: #38bdf8;
-    /* Celeste brillante de alta visibilidad para el correo */
-}
-
-.contact-btn.cv i {
-    color: #d4af37;
-    /* El dorado corporativo de AURO para el portafolio/CV */
-}
+/* COLORES DE ICONOS EN BOTONES DE CONTACTO */
+.contact-btn.whatsapp i { color: #25D366; }
+.contact-btn.instagram i { color: #f857a6; }
+.contact-btn.email i { color: #38bdf8; }
 
 /* FOOTER */
-
 footer {
     background: #0b1729;
     color: white;
@@ -300,8 +351,8 @@ footer {
     padding: 25px;
 }
 
-@media(max-width:768px) {
-
+/* RESPONSIVE */
+@media(max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -309,26 +360,9 @@ footer {
     nav ul {
         display: none;
     }
-}
 
-.whatsapp-btn {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    margin: 10px;
-    font-weight: 600;
+    .contact-btn {
+        min-width: 100%;
+        margin: 8px 0;
+    }
 }
-
-.whatsapp-btn:hover {
-    background: #1ea851;
-}
-
-.contact {
-    background: #14213D;
-    color: white;
-}
-
-</style>
