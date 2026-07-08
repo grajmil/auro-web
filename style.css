@@ -4,11 +4,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Fuerza a que los bordes y paddings queden dentro del tamaño asignado a los elementos */
+    box-sizing: border-box; /* Fuerza a que los bordes y paddings se sumen hacia adentro del contenedor */
 }
 
 html {
-    scroll-behavior: smooth; /* Hace que al clickear links del menú la pantalla se desplace suavemente */
+    scroll-behavior: smooth; /* Logra un efecto de deslizamiento elegante al navegar las secciones */
 }
 
 body {
@@ -16,22 +16,22 @@ body {
     color: #333333;
     line-height: 1.6;
     background: #ffffff;
-    overflow-x: hidden; /* EVITA el desbordamiento horizontal y scroll falso en celulares */
+    overflow-x: hidden; /* EVITA cualquier scroll lateral roto o desborde visual en celulares */
 }
 
-/* Espaciado base para computadoras. Se reducirá dinámicamente en celulares */
+/* Margen estándar para pantallas de computadora (se reducirá en móviles vía media queries) */
 section {
     padding: 100px 20px;
 }
 
-/* Contenedor centralizado para limitar el ancho máximo del contenido */
+/* Contenedor centralizado para empaquetar de forma alineada el contenido */
 .container {
     max-width: 1200px;
     margin: auto;
     width: 100%;
 }
 
-/* Encabezados uniformes de cada sección */
+/* Diseño de los títulos principales de sección */
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -39,27 +39,27 @@ section {
 
 .section-title h2 {
     font-size: 2.5rem;
-    color: #1d3557; /* Azul corporativo */
+    color: #1d3557; /* Azul oscuro corporativo principal */
     font-weight: 800;
 }
 
 /* ==========================================================================
-   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   2. BARRA DE NAVEGACIÓN (NAVBAR PRINCIPAL)
    ========================================================================== */
 nav {
-    position: fixed; /* Mantiene la barra fija arriba mientras el usuario navega */
+    position: fixed; /* Mantiene la barra pegada estáticamente arriba durante el scroll */
     top: 0;
     width: 100%;
-    background: rgba(10, 20, 40, 0.92); /* Fondo azul oscuro semitransparente */
-    backdrop-filter: blur(8px); /* Efecto esmerilado/borroso moderno detrás del menú */
-    z-index: 1000; /* Asegura que la barra quede por encima de cualquier otro elemento */
+    background: rgba(10, 20, 40, 0.92); /* Fondo azul noche sutilmente transparente */
+    backdrop-filter: blur(8px); /* Aplica un desenfoque de fondo premium moderno */
+    z-index: 1000; /* Le da prioridad absoluta de capa para estar siempre arriba de todo */
 }
 
 .nav-container {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-between; /* Distribuye el logo a la izquierda y el menú a la derecha */
+    justify-content: space-between; /* Envía el logo al extremo izquierdo y el menú al derecho */
     align-items: center;
     padding: 15px 20px;
 }
@@ -94,10 +94,10 @@ nav a {
 }
 
 nav a:hover {
-    color: #d4af37; /* Cambio a dorado al pasar el mouse */
+    color: #d4af37; /* El texto vira a dorado cuando pasamos el cursor por encima */
 }
 
-/* Botón destacado dentro del menú */
+/* Botón de llamada a la acción destacado en la barra de navegación */
 .btn-nav-cotizar {
     background: #1d3557;
     color: white !important;
@@ -112,12 +112,27 @@ nav a:hover {
     transform: translateY(-1px);
 }
 
+/* NUEVO: Ocultamos el botón hamburguesa por defecto en ordenadores de escritorio */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+    color: #d4af37;
+}
+
 /* ==========================================================================
-   3. HERO SECTION (PORTADA DE BIENVENIDA)
+   3. HERO SECTION (BANNER SUPERIOR DE BIENVENIDA)
    ========================================================================== */
 .hero {
-    height: 100vh; /* Ocupa el 100% del alto visual del navegador */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), /* Capa oscura para dar legibilidad al texto */
+    height: 100vh; /* Configura el alto total al 100% de la pantalla del usuario */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), /* Filtro oscuro para leer el texto fácilmente */
                 url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');
     background-size: cover;
     background-position: center;
@@ -144,10 +159,10 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* BOTÓN GLOBAL COMPARTIDO (Hero y Llamados a la acción comerciales) */
+/* BOTÓN BASE GLOBAL (Reutilizado en Hero y en la llamada de cotización comercial) */
 .btn {
     display: inline-block;
-    background: #d4af37; /* Dorado institucional */
+    background: #d4af37; /* Color dorado primario */
     color: black;
     padding: 15px 30px;
     text-decoration: none;
@@ -158,11 +173,11 @@ nav a:hover {
 
 .btn:hover {
     background: #c29e2e;
-    transform: translateY(-2px); /* Pequeño salto hacia arriba de animación */
+    transform: translateY(-2px); /* Desplazamiento animado suave hacia arriba */
 }
 
 /* ==========================================================================
-   4. ACERCA DE & FILOSOFÍA (VALORES)
+   4. SECCIONES: SOBRE NOSOTROS Y VALORES
    ========================================================================== */
 .about {
     background: #ffffff;
@@ -179,7 +194,7 @@ nav a:hover {
     background: #f5f7fa;
 }
 
-/* Flexbox dinámico que distribuye uniformemente y centra elementos */
+/* Flexbox elástico adaptativo para las 3 tarjetas corporativas */
 .values-grid {
     display: flex;
     flex-wrap: wrap;
@@ -192,8 +207,8 @@ nav a:hover {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-    flex: 1 1 280px; /* Base de 280px, crece y se reduce de forma elástica */
-    max-width: 360px; /* Previene deformación en filas incompletas */
+    flex: 1 1 280px; /* Crece libremente, pero conserva una base mínima de 280px */
+    max-width: 360px; /* Previene deformación excesiva de las tarjetas */
 }
 
 .value h3 {
@@ -204,9 +219,9 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   5. GRILLA DE SERVICIOS, OBRAS Y NOVEDADES
+   5. MAQUETACIÓN ESTRUCTURAL DE TARJETAS (SERVICIOS, OBRAS Y NOVEDADES)
    ========================================================================== */
-/* Flexbox avanzado con 'wrap' e 'justify-content: center' para equilibrar filas impares */
+/* Diseñado con Flexbox distribuido al centro para acomodar de manera simétrica las filas impares */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -214,15 +229,17 @@ nav a:hover {
     gap: 30px;
 }
 
-/* Tarjeta estándar de contenido */
+/* Estructura común para todas las tarjetas */
 .card {
     background: white;
-    padding: 35px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
+    overflow: hidden; /* Corta y empaqueta las esquinas de fotos que desborden */
     transition: transform 0.3s, box-shadow 0.3s;
-    flex: 1 1 280px; /* Tamaño mínimo recomendado de 280px para pantallas móviles */
-    max-width: 380px; /* Evita que una tarjeta sola se expanda por toda la pantalla */
+    flex: 1 1 280px; /* Se contrae elásticamente en móviles de hasta 280px */
+    max-width: 380px; /* Limita el ancho horizontal si queda una tarjeta solitaria al final */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos internos (Foto, Título, Texto) en cascada */
 }
 
 .card:hover {
@@ -230,19 +247,13 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    color: #1d3557;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
+/* Padding exclusivo para tarjetas de texto simple (como servicios) */
 .service-card {
     text-align: center;
     padding: 40px 30px;
 }
 
-/* Iconos de servicios normalizados con el azul corporativo de AURO */
+/* Íconos corporativos de servicios normalizados en azul */
 .service-card i {
     font-size: 3rem;
     color: #1d3557;
@@ -253,13 +264,53 @@ nav a:hover {
     color: #666666;
 }
 
-/* Caja contenedora para el botón de cotización comercial */
+/* NUEVO: Soporte y distribución para tarjetas que contienen imágenes (Obras y Novedades) */
+.card-imagen {
+    padding: 0; /* Quitamos padding externo para que la imagen toque los bordes laterales */
+}
+
+.card-image-container {
+    width: 100%;
+    height: 200px; /* Altura de encuadre fija para la imagen */
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la foto proporcionalmente rellenando el marco sin estirarla */
+    transition: transform 0.5s;
+}
+
+.card-imagen:hover .card-image-container img {
+    transform: scale(1.06); /* Lindo efecto de zoom suave en la foto al pasar el cursor */
+}
+
+.card-body-content {
+    padding: 25px; /* Espaciado interior para los títulos y textos debajo de la foto */
+    flex-grow: 1;  /* Fuerza a que los textos empujen parejos hacia abajo alineando las tarjetas */
+}
+
+.card-body-content h3 {
+    margin-bottom: 12px;
+    color: #1d3557;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.card-body-content p {
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* Contenedor gris inferior de Cotización */
 .services-cta {
     text-align: center;
     margin-top: 50px;
     padding: 40px 20px;
     background: #f5f7fa;
     border-radius: 12px;
+    width: 100%;
 }
 
 .services-cta p {
@@ -269,7 +320,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   6. SECCIÓN SECTORES / PROYECTOS (MÓDULOS COMPACTADOS)
+   6. SECCIÓN SECTORES INDUSTRIALES (TARJETAS COMPACTAS)
    ========================================================================== */
 .projects-grid {
     display: flex;
@@ -279,14 +330,14 @@ nav a:hover {
 }
 
 .sector {
-    height: 240px; /* Altura optimizada compacta */
+    height: 240px; /* Medida compacta optimizada */
     border-radius: 12px;
     overflow: hidden;
     position: relative;
     background-size: cover;
     background-position: center;
     transition: transform 0.4s;
-    flex: 1 1 260px; /* Estructura responsive idónea para celulares */
+    flex: 1 1 260px;
     max-width: 360px;
 }
 
@@ -294,13 +345,13 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-/* Capa de degradado oscuro sobre la imagen para que el texto blanco resalte */
+/* Sombreado degradado interno para que los textos sobre las fotos se lean perfecto */
 .sector-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.75));
     display: flex;
-    align-items: flex-end; /* Coloca el título abajo de la tarjeta */
+    align-items: flex-end; /* Posiciona el título en la base de la tarjeta */
     padding: 20px;
 }
 
@@ -310,7 +361,7 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* Clases específicas para asociar las imágenes correspondientes a cada sector */
+/* Enlaces directos a imágenes para el catálogo de áreas */
 .mineria { background-image: url('assets/mineria.jpg'); }
 .industrial { background-image: url('assets/industrial.jpg'); }
 .energia { background-image: url('assets/energia.jpg'); }
@@ -319,10 +370,10 @@ nav a:hover {
 .residential { background-image: url('assets/residencial.jpg'); }
 
 /* ==========================================================================
-   7. SECCIÓN CONTACTAR & FOOTER (ALTO CONTRASTE)
+   7. SECCIÓN CONTACTAR Y PIE DE PÁGINA (ALTO CONTRASTE)
    ========================================================================== */
 .contact {
-    background: #14213D; /* Fondo azul noche profundo original */
+    background: #14213D; /* Restaurado el color de fondo original azul noche profundo */
     color: white;
     text-align: center;
     padding: 90px 20px;
@@ -343,7 +394,7 @@ nav a:hover {
     align-items: center;
 }
 
-/* Estilo para los botones de contacto de alto contraste */
+/* Estilo unificado de botones de redes y contacto */
 .contact-btn {
     display: inline-flex;
     align-items: center;
@@ -358,8 +409,8 @@ nav a:hover {
     color: #ffffff !important;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 100%; /* Por defecto ocupan todo el ancho disponible en la caja del contenedor */
-    max-width: 380px; /* Límite para que no se estiren demasiado en PC */
+    width: 100%;
+    max-width: 380px; /* Límite para que no se deformen en monitores amplios */
     transition: all 0.3s ease;
 }
 
@@ -375,7 +426,7 @@ nav a:hover {
     display: inline-block;
 }
 
-/* Colores específicos de alta visibilidad para los iconos dentro de los botones de contacto */
+/* Iluminación e isotipos de color representativo para contacto */
 .contact-btn.whatsapp i { color: #25D366; }
 .contact-btn.instagram i { color: #f857a6; }
 .contact-btn.email i { color: #38bdf8; }
@@ -389,11 +440,10 @@ footer {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES (ADAPTACIÓN ESPECÍFICA PARA DISPOSITIVOS MÓVILES)
+   8. MEDIA QUERIES (ADAPTACIÓN ESPECÍFICA PARA CELULARES MEDIANTE INTERACTIVIDAD JS)
    ========================================================================== */
-/* Las reglas dentro de este bloque solo se activan en pantallas menores o iguales a 768px (Celulares y Tablets verticales) */
 @media(max-width: 768px) {
-    /* Reduce la separación excesiva para pantallas táctiles cortas */
+    /* Ajusta y reduce el espaciado para que no se extienda excesivamente el scroll táctil */
     section {
         padding: 60px 15px;
     }
@@ -402,31 +452,62 @@ footer {
         margin-bottom: 40px;
     }
 
-    /* Reducción proporcional del tamaño de letras en celulares */
-    .section-title h2 {
-        font-size: 2rem;
+    .section-title h2 { font-size: 2rem; }
+    .hero h1 { font-size: 2.3rem; }
+    .hero p { font-size: 1.1rem; }
+
+    /* Activamos de forma visible la visualización del menú hamburguesa */
+    .menu-toggle {
+        display: block;
     }
 
-    .hero h1 {
-        font-size: 2.3rem;
+    /* Convertimos la lista plana de navegación en un bloque oculto vertical interactivo */
+    .nav-menu {
+        position: absolute;
+        top: 75px; /* Abre justo al borde inferior de la barra fija */
+        left: 0;
+        width: 100%;
+        background: rgba(10, 20, 40, 0.98); /* Fondo opaco sólido para que no trasluzca el texto */
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        
+        /* Animación inicial oculta de origen */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
     }
 
-    .hero p {
+    /* ESTADO ACTIVO: Inyectado dinámicamente desde Javascript cuando presionamos la hamburguesa */
+    .nav-menu.active {
+        max-height: 450px; /* Margen de despliegue vertical */
+        opacity: 1;
+        padding: 20px 0;
+        border-bottom: 2px solid #d4af37; /* Línea decorativa dorada de cierre de menú */
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
         font-size: 1.1rem;
     }
 
-    /* Oculta los links de texto del menú clásico para prevenir amontonamientos en pantalla chica */
-    nav ul {
-        display: none;
+    /* Modificación del botón de cotización para acomodarse verticalmente en el panel */
+    .btn-nav-cotizar {
+        background: #1d3557;
+        margin: 10px auto;
+        max-width: 80%;
+        border-radius: 6px;
     }
 
-    /* Hace que el logo de AURO tome una posición centralizada y balanceada en el móvil */
-    .nav-container {
-        justify-content: center;
-        padding: 12px 15px;
-    }
-
-    /* Modifica el ancho y espaciado de los botones táctiles de contacto */
+    /* Botones adaptados al 100% del ancho del smartphone */
     .contact-btn {
         max-width: 100%;
         font-size: 1rem;
