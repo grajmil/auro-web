@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -21,9 +22,9 @@
         <div class="nav-container">
             <div class="logo">
                 <img src="assets/AURO2.0.png" alt="Logo AURO SRL">
-                <span>AURO SRL</span>
+                <span>AURO <em>SRL</em></span>
             </div>
-            
+
             <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú de navegación">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -32,6 +33,7 @@
                 <li><a href="#about" class="nav-link">Nosotros</a></li>
                 <li><a href="#values" class="nav-link">Valores</a></li>
                 <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#innovacion" class="nav-link">Innovación</a></li>
                 <li><a href="#projects" class="nav-link">Proyectos</a></li>
                 <li><a href="#contact" class="btn-nav-cotizar nav-link">Cotizá con nosotros</a></li>
             </ul>
@@ -39,19 +41,28 @@
     </nav>
 
     <section class="hero">
+        <div class="hero-plate hero-plate--tl">
+            <span>AURO&nbsp;SRL</span><span>ARG</span>
+        </div>
+        <div class="hero-plate hero-plate--br">
+            <span>ESC&nbsp;S/E</span><span>HOJA&nbsp;01</span>
+        </div>
         <div class="hero-content">
-            <h1>Construimos Confianza</h1>
-            <p>Ingeniería, Construcción y Gerenciamiento de Proyectos para los sectores Industrial, Minero y Energético.</p>
-            <a href="#services" class="btn">Conocer Servicios</a>
+            <p class="eyebrow">Ingeniería · Construcción · Gerenciamiento</p>
+            <h1>Construimos<br>Confianza</h1>
+            <p class="hero-lead">Ingeniería, Construcción y Gerenciamiento de Proyectos para los sectores Industrial,
+                Minero y Energético.</p>
+            <a href="#services" class="btn">Conocer Servicios <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 
     <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Acerca de Nosotros</h2>
+        <div class="container about-grid">
+            <div class="about-label">
+                <p class="eyebrow eyebrow--dark">Quiénes somos</p>
+                <h2>Acerca de<br>Nosotros</h2>
             </div>
-            <p>
+            <p class="about-text">
                 AURO es una empresa dedicada a la ingeniería, elaboración y ejecución
                 de proyectos. Nace del esfuerzo constante, la experiencia en el terreno
                 y una firme convicción: construir con transparencia, compromiso y visión
@@ -61,21 +72,45 @@
         </div>
     </section>
 
+    <section class="specs-strip">
+        <div class="container specs-strip__grid">
+            <div class="spec-item">
+                <span class="spec-item__code">STD · 01</span>
+                <p class="spec-item__label">ISO 9001</p>
+                <p class="spec-item__value">Sistema de gestión de calidad en implementación progresiva.</p>
+            </div>
+            <div class="spec-item">
+                <span class="spec-item__code">CICLO · 02</span>
+                <p class="spec-item__label">P.H.V.A.</p>
+                <p class="spec-item__value">Pensar — Hacer — Verificar — Actuar, en cada proceso operativo.</p>
+            </div>
+            <div class="spec-item">
+                <span class="spec-item__code">BASE · 03</span>
+                <p class="spec-item__label">Santa María, Catamarca</p>
+                <p class="spec-item__value">Presencia física y capacidad operativa en el territorio.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="values" class="values">
         <div class="container">
+            <p class="eyebrow">Fundamentos</p>
             <div class="section-title">
-                <h2>Misión, Visión y Valores</h2>
+                <h2>Misión, Visión<br>y Valores</h2>
             </div>
             <div class="values-grid">
                 <div class="value">
+                    <span class="value-code">MIS</span>
                     <h3>Misión</h3>
                     <p>Desarrollar proyectos con transparencia y brindar calidad a nuestros clientes.</p>
                 </div>
                 <div class="value">
+                    <span class="value-code">VIS</span>
                     <h3>Visión</h3>
                     <p>Mantenernos a la vanguardia mediante tecnologías y metodologías innovadoras.</p>
                 </div>
                 <div class="value">
+                    <span class="value-code">VAL</span>
                     <h3>Valores</h3>
                     <p>Honestidad, integridad, respeto, calidad, innovación, mejora continua y sostenibilidad.</p>
                 </div>
@@ -85,40 +120,58 @@
 
     <section id="services">
         <div class="container">
+            <p class="eyebrow eyebrow--dark">Qué hacemos</p>
             <div class="section-title">
                 <h2>Nuestros Servicios</h2>
             </div>
-            <div class="services-grid">
+            <div class="services-grid single-row">
                 <div class="card service-card">
+                    <span class="disc-code">ING</span>
                     <i class="fa-solid fa-drafting-compass"></i>
                     <h3>Ingeniería</h3>
                     <p>Ingeniería civil, estructural, vial, hidráulica y eléctrica.</p>
                 </div>
                 <div class="card service-card">
+                    <span class="disc-code">GER</span>
                     <i class="fa-solid fa-diagram-project"></i>
                     <h3>Gerenciamiento</h3>
                     <p>Planificación, control de costos, plazos y calidad.</p>
                 </div>
                 <div class="card service-card">
+                    <span class="disc-code">CON</span>
                     <i class="fa-solid fa-helmet-safety"></i>
                     <h3>Construcción</h3>
                     <p>Ejecución de obras civiles, industriales e infraestructura.</p>
                 </div>
                 <div class="card service-card">
+                    <span class="disc-code">ENE</span>
                     <i class="fa-solid fa-bolt"></i>
                     <h3>Energía</h3>
                     <p>Energías renovables, parques solares y eficiencia energética.</p>
                 </div>
                 <div class="card service-card">
+                    <span class="disc-code">ARQ</span>
                     <i class="fa-solid fa-building"></i>
                     <h3>Arquitectura</h3>
                     <p>Proyectos habitacionales, comerciales e institucionales.</p>
                 </div>
             </div>
 
+            <div class="services-index">
+                <p class="services-index__label">Especialidades dentro de Ingeniería Civil y Eléctrica</p>
+                <ul class="services-index__list">
+                    <li><span>C-01</span> Estructural</li>
+                    <li><span>C-02</span> Hidráulica e Hidrológica</li>
+                    <li><span>C-03</span> Vial</li>
+                    <li><span>E-01</span> Media y Baja Tensión</li>
+                    <li><span>E-02</span> Automatización Industrial</li>
+                    <li><span>M-01</span> Modelado BIM</li>
+                </ul>
+            </div>
+
             <div class="services-cta">
                 <p>¿Tenés un proyecto en mente? Evaluamos tus requerimientos técnicos sin compromiso.</p>
-                <a href="https://wa.me/5493815149886?text=Hola%20AURO%20SRL,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto."
+                <a href="https://wa.me/54938151445646?text=Hola%20AURO%20SRL,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto."
                     target="_blank" class="btn" rel="noopener noreferrer">
                     <i class="fa-solid fa-file-invoice-dollar"></i> Solicitar Cotización
                 </a>
@@ -126,12 +179,61 @@
         </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sectores en los que Trabajamos</h2>
+    <section id="innovacion" class="innovacion">
+        <div class="container innovacion-grid">
+            <div class="innovacion-label">
+                <p class="eyebrow eyebrow--dark">Tecnología aplicada</p>
+                <h2>Innovación y<br>Transformación<br>Digital</h2>
+                <p class="innovacion-lead">Nuestro departamento de ingeniería aplica ingeniería de datos y
+                    tecnología propia a cada etapa del proyecto.</p>
             </div>
-            <div class="projects-grid">
+            <div class="innovacion-content">
+                <ul class="tool-list">
+                    <li>
+                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <h4>Programación avanzada</h4>
+                            <p>Para la optimización de procesos complejos de ingeniería y obra.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                        <div>
+                            <h4>Automatización mediante APIs</h4>
+                            <p>Conectamos plataformas de diseño y gestión para sincronizar datos y reducir errores
+                                humanos.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div>
+                            <h4>Análisis predictivo</h4>
+                            <p>Lectura anticipada del comportamiento de infraestructuras críticas.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-microchip"></i>
+                        <div>
+                            <h4>Inteligencia artificial</h4>
+                            <p>Algoritmos aplicados a la gestión y el seguimiento de obra.</p>
+                        </div>
+                    </li>
+                </ul>
+                <blockquote class="innovacion-quote">
+                    Esto nos diferencia de los métodos tradicionales y nos posiciona como un socio estratégico
+                    único frente a la ingeniería convencional.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <p class="eyebrow">Dónde trabajamos</p>
+            <div class="section-title">
+                <h2>Sectores en los<br>que Trabajamos</h2>
+            </div>
+            <div class="projects-grid single-row">
                 <div class="sector mineria">
                     <div class="sector-overlay">
                         <h3>Minería</h3>
@@ -168,94 +270,179 @@
 
     <section id="obras">
         <div class="container">
+            <p class="eyebrow eyebrow--dark">En terreno</p>
             <div class="section-title">
                 <h2>Obras en Ejecución</h2>
             </div>
-            <div class="services-grid">
+            <div class="carousel">
+                <button class="carousel-btn carousel-btn--prev" data-target="obras-track" aria-label="Obra anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="services-grid carousel-track" id="obras-track">
 
-                <div class="card card-imagen">
-                    <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600" alt="Nombre de la Obra 1">
+                    <div class="card card-imagen">
+                        <div class="card-image-container">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600"
+                                alt="Nombre de la Obra 1">
+                        </div>
+                        <div class="card-body-content">
+                            <h3>Centro de Salud UNCA</h3>
+                            <p>Construcción integral de las nuevas instalaciones sanitarias, estructura y arquitectura civil
+                                de la Universidad Nacional de Catamarca.</p>
+                        </div>
                     </div>
-                    <div class="card-body-content">
-                        <h3>Centro de Salud UNCA</h3>
-                        <p>Construcción integral de las nuevas instalaciones sanitarias, estructura y arquitectura civil de la Universidad Nacional de Catamarca.</p>
+                    <div class="card card-imagen">
+                        <div class="card-image-container">
+                            <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=600"
+                                alt="Nombre de la Obra 2">
+                        </div>
+                        <div class="card-body-content">
+                            <h3>Red de Agua Potable</h3>
+                            <p>Despliegue y ejecución de un tendido de red de agua potable de 2000 metros de longitud
+                                lineal, incluyendo planos clave y nodos de distribución.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-imagen">
-                    <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=600" alt="Nombre de la Obra 2">
-                    </div>
-                    <div class="card-body-content">
-                        <h3>Red de Agua Potable</h3>
-                        <p>Despliegue y ejecución de un tendido de red de agua potable de 2000 metros de longitud lineal, incluyendo planos clave y nodos de distribución.</p>
-                    </div>
-                </div>
 
-                <div class="card card-imagen">
-                    <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600" alt="Nombre de la Obra 3">
+                    <div class="card card-imagen">
+                        <div class="card-image-container">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600"
+                                alt="Nombre de la Obra 3">
+                        </div>
+                        <div class="card-body-content">
+                            <h3>Montaje Estructural Industrial</h3>
+                            <p>Gerenciamiento y ejecución de naves industriales de alta complejidad técnica para el sector
+                                de infraestructura y logística.</p>
+                        </div>
                     </div>
-                    <div class="card-body-content">
-                        <h3>Montaje Estructural Industrial</h3>
-                        <p>Gerenciamiento y ejecución de naves industriales de alta complejidad técnica para el sector de infraestructura y logística.</p>
-                    </div>
-                </div>
 
+                </div>
+                <button class="carousel-btn carousel-btn--next" data-target="obras-track" aria-label="Obra siguiente">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <section id="novedades">
+    <section id="novedades" class="novedades">
         <div class="container">
+            <p class="eyebrow">Actualidad</p>
             <div class="section-title">
                 <h2>Novedades</h2>
             </div>
-            <div class="services-grid">
+            <div class="carousel">
+                <button class="carousel-btn carousel-btn--prev" data-target="novedades-track" aria-label="Novedad anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="services-grid carousel-track" id="novedades-track">
 
-                <div class="card card-imagen">
-                    <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600" alt="Título de la Novedad 1">
+                    <div class="card card-imagen">
+                        <div class="card-image-container">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
+                                alt="Título de la Novedad 1">
+                        </div>
+                        <div class="card-body-content">
+                            <h3>Automatización de Procesos</h3>
+                            <p>Implementamos soluciones de transformación digital mediante Google Apps Script para optimizar
+                                el procesamiento interno de datos de obras.</p>
+                        </div>
                     </div>
-                    <div class="card-body-content">
-                        <h3>Automatización de Procesos</h3>
-                        <p>Implementamos soluciones de transformación digital mediante Google Apps Script para optimizar el procesamiento interno de datos de obras.</p>
+                    <div class="card card-imagen">
+                        <div class="card-image-container">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600"
+                                alt="Título de la Novedad 2">
+                        </div>
+                        <div class="card-body-content">
+                            <h3>Mejora Continua y Calidad</h3>
+                            <p>Consolidamos nuestro equipo técnico incorporando nuevas metodologías de control de costos y
+                                plazos en proyectos mineros y energéticos.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-imagen">
-                    <div class="card-image-container">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600" alt="Título de la Novedad 2">
-                    </div>
-                    <div class="card-body-content">
-                        <h3>Mejora Continua y Calidad</h3>
-                        <p>Consolidamos nuestro equipo técnico incorporando nuevas metodologías de control de costos y plazos en proyectos mineros y energéticos.</p>
-                    </div>
-                </div>
 
+                </div>
+                <button class="carousel-btn carousel-btn--next" data-target="novedades-track" aria-label="Novedad siguiente">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hse" class="hse">
+        <div class="container">
+            <p class="eyebrow eyebrow--dark">Compromiso</p>
+            <div class="section-title">
+                <h2>Calidad, Seguridad<br>y Medio Ambiente</h2>
+            </div>
+            <div class="hse-grid">
+                <div class="hse-card">
+                    <span class="value-code">CAL</span>
+                    <h3>Política de Calidad</h3>
+                    <p>Brindamos servicios de construcción e ingeniería con altos estándares, alineados a la Norma
+                        ISO 9001, con procedimientos documentados y capacitación continua del personal.</p>
+                </div>
+                <div class="hse-card">
+                    <span class="value-code">HSE</span>
+                    <h3>Higiene, Seguridad y Ambiente</h3>
+                    <p>Priorizamos la prevención de incidentes y la minimización del impacto ambiental, con
+                        participación activa de los trabajadores y liderazgo visible de la dirección.</p>
+                </div>
+                <div class="hse-card">
+                    <span class="value-code">MOL</span>
+                    <h3>Mano de Obra Local</h3>
+                    <p>Formamos y capacitamos personal de la zona, impulsando empleo calificado y una ejecución
+                        de obra más segura y responsable.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactar</h2>
-            <div class="contact-buttons-container">
-                <a href="https://wa.me/5493815149886?text=Hola%20AURO%20SRL,%20me%20contacto%20desde%20la%20web%20para%20realizar%20una%20cotizaci%C3%B3n%20o%20consulta%20sobre%20un%20proyecto."
-                    target="_blank" class="contact-btn whatsapp" rel="noopener noreferrer">
-                    <i class="fa-brands fa-whatsapp"></i> Cotizá o consultá con nosotros
-                </a>
-                <a href="https://instagram.com/auro.ar" target="_blank" class="contact-btn instagram" rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
-                <a href="mailto:marcelo.sotomayor@auro.ar?subject=Oportunidad%20Laboral%20-%20AURO%20SRL" class="contact-btn email">
-                    <i class="fa-solid fa-briefcase"></i> Trabaja con nosotros
-                </a>
+        <div class="container contact-grid">
+            <div class="contact-intro">
+                <p class="eyebrow">Hablemos</p>
+                <h2>Contactar</h2>
+                <div class="contact-buttons-container">
+                    <a href="https://wa.me/5493815456456?text=Hola%20AURO%20SRL,%20me%20contacto%20desde%20la%20web%20para%20realizar%20una%20cotizaci%C3%B3n%20o%20consulta%20sobre%20un%20proyecto."
+                        target="_blank" class="contact-btn whatsapp" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> Cotizá o consultá con nosotros
+                    </a>
+                    <a href="https://instagram.com/auro.ar" target="_blank" class="contact-btn instagram"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="mailto:marcelo.sotomayor@auro.ar?subject=Oportunidad%20Laboral%20-%20AURO%20SRL"
+                        class="contact-btn email">
+                        <i class="fa-solid fa-briefcase"></i> Trabaja con nosotros
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-team">
+                <p class="contact-team__label">Contacto institucional</p>
+
+                <div class="team-member">
+                    <h4>Ing. Marcelo Sotomayor</h4>
+                    <span>Socio — AURO S.R.L.</span>
+                    <a href="tel:+5493815431313"><i class="fa-solid fa-phone"></i> +54 9 381 5431313</a>
+                    <a href="mailto:marcelo.sotomayor@auro.ar"><i class="fa-solid fa-envelope"></i>
+                        marcelo.sotomayor@auro.ar</a>
+                </div>
+
+                <div class="team-member">
+                    <h4>M.M.O. Aldo Ledesma</h4>
+                    <span>Socio — AURO S.R.L.</span>
+                    <a href="tel:+5493834930254"><i class="fa-solid fa-phone"></i> +54 9 383 4930254</a>
+                    <a href="mailto:aldo.ledesma@auro.ar"><i class="fa-solid fa-envelope"></i>
+                        aldo.ledesma@auro.ar</a>
+                </div>
+
+                <p class="contact-address"><i class="fa-solid fa-location-dot"></i> Ruta Nº1 — Km 1.7 — S.F.V.C.,
+                    Catamarca</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>AURO SRL © 2026 - Ingeniería y Construcción</p>
+        <p>AURO SRL © 2026 — Ingeniería y Construcción</p>
     </footer>
 
     <script>
@@ -268,7 +455,7 @@
         // 1. Abre o cierra el menú vertical al hacer clic en el botón de hamburguesa
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active'); // Prende o apaga la clase css '.active'
-            
+
             // Si el menú está abierto, cambia el icono de barras (☰) por una cruz (✕)
             if (navMenu.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
@@ -287,6 +474,33 @@
                 menuIcon.classList.add('fa-bars');
             });
         });
+
+        // 3. Revela las secciones con una transición sutil al entrar en el viewport
+        const revealTargets = document.querySelectorAll('.value, .card, .sector, .about-grid, .hero-content, .spec-item, .hse-card, .innovacion-grid, .team-member');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        // 4. Controla el desplazamiento tipo carrusel de Obras y Novedades
+        document.querySelectorAll('.carousel-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const track = document.getElementById(btn.dataset.target);
+                if (!track) return;
+                const card = track.querySelector('.card');
+                const step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
+                track.scrollBy({
+                    left: btn.classList.contains('carousel-btn--next') ? step : -step,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
+
 </html>
