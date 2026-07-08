@@ -1,30 +1,37 @@
-/* RESET & GENERALES */
+/* ==========================================================================
+   1. RESETEO DE ESTILOS & REGLAS GENERALES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Fuerza a que los bordes y paddings queden dentro del tamaño asignado a los elementos */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Hace que al clickear links del menú la pantalla se desplace suavemente */
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    color: #333;
+    color: #333333;
     line-height: 1.6;
-    background: #fff;
+    background: #ffffff;
+    overflow-x: hidden; /* EVITA el desbordamiento horizontal y scroll falso en celulares */
 }
 
+/* Espaciado base para computadoras. Se reducirá dinámicamente en celulares */
 section {
     padding: 100px 20px;
 }
 
+/* Contenedor centralizado para limitar el ancho máximo del contenido */
 .container {
     max-width: 1200px;
     margin: auto;
+    width: 100%;
 }
 
+/* Encabezados uniformes de cada sección */
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -32,27 +39,29 @@ section {
 
 .section-title h2 {
     font-size: 2.5rem;
-    color: #1d3557;
+    color: #1d3557; /* Azul corporativo */
     font-weight: 800;
 }
 
-/* NAVBAR */
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
 nav {
-    position: fixed;
+    position: fixed; /* Mantiene la barra fija arriba mientras el usuario navega */
     top: 0;
     width: 100%;
-    background: rgba(10, 20, 40, .92);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
+    background: rgba(10, 20, 40, 0.92); /* Fondo azul oscuro semitransparente */
+    backdrop-filter: blur(8px); /* Efecto esmerilado/borroso moderno detrás del menú */
+    z-index: 1000; /* Asegura que la barra quede por encima de cualquier otro elemento */
 }
 
 .nav-container {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Distribuye el logo a la izquierda y el menú a la derecha */
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .logo {
@@ -60,20 +69,20 @@ nav {
     align-items: center;
     gap: 12px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
 .logo img {
-    height: 50px;
+    height: 45px;
     width: auto;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
@@ -81,12 +90,18 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #d4af37; /* Cambio a dorado al pasar el mouse */
+}
+
+/* Botón destacado dentro del menú */
 .btn-nav-cotizar {
     background: #1d3557;
     color: white !important;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 6px;
     font-weight: 600;
     transition: background 0.3s, transform 0.3s;
@@ -97,11 +112,13 @@ nav a {
     transform: translateY(-1px);
 }
 
-/* HERO & BOTÓN GLOBAL COMPARTIDO */
+/* ==========================================================================
+   3. HERO SECTION (PORTADA DE BIENVENIDA)
+   ========================================================================== */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
-        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');
+    height: 100vh; /* Ocupa el 100% del alto visual del navegador */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), /* Capa oscura para dar legibilidad al texto */
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -109,16 +126,17 @@ nav a {
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 0 20px;
 }
 
 .hero-content {
     max-width: 900px;
-    padding: 20px;
 }
 
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 20px;
+    font-weight: 800;
 }
 
 .hero p {
@@ -126,10 +144,10 @@ nav a {
     margin-bottom: 30px;
 }
 
-/* Formato compartido para Conocer Servicios y Solicitar Cotización */
+/* BOTÓN GLOBAL COMPARTIDO (Hero y Llamados a la acción comerciales) */
 .btn {
     display: inline-block;
-    background: #d4af37;
+    background: #d4af37; /* Dorado institucional */
     color: black;
     padding: 15px 30px;
     text-decoration: none;
@@ -140,12 +158,14 @@ nav a {
 
 .btn:hover {
     background: #c29e2e;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Pequeño salto hacia arriba de animación */
 }
 
-/* ABOUT */
+/* ==========================================================================
+   4. ACERCA DE & FILOSOFÍA (VALORES)
+   ========================================================================== */
 .about {
-    background: #fff;
+    background: #ffffff;
 }
 
 .about p {
@@ -155,14 +175,15 @@ nav a {
     font-size: 1.1rem;
 }
 
-/* VALORES */
 .values {
     background: #f5f7fa;
 }
 
+/* Flexbox dinámico que distribuye uniformemente y centra elementos */
 .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -170,7 +191,9 @@ nav a {
     background: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    flex: 1 1 280px; /* Base de 280px, crece y se reduce de forma elástica */
+    max-width: 360px; /* Previene deformación en filas incompletas */
 }
 
 .value h3 {
@@ -180,7 +203,10 @@ nav a {
     font-weight: 700;
 }
 
-/* SERVICIOS */
+/* ==========================================================================
+   5. GRILLA DE SERVICIOS, OBRAS Y NOVEDADES
+   ========================================================================== */
+/* Flexbox avanzado con 'wrap' e 'justify-content: center' para equilibrar filas impares */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -188,24 +214,26 @@ nav a {
     gap: 30px;
 }
 
+/* Tarjeta estándar de contenido */
 .card {
     background: white;
     padding: 35px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
-    transition: .3s;
-    flex: 1 1 280px;   /* <--- AGREGAR ESTA LÍNEA */
-    max-width: 380px;  /* <--- AGREGAR ESTA LÍNEA (Evita que una tarjeta sola ocupe todo el ancho) */
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 280px; /* Tamaño mínimo recomendado de 280px para pantallas móviles */
+    max-width: 380px; /* Evita que una tarjeta sola se expanda por toda la pantalla */
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
     margin-bottom: 15px;
     color: #1d3557;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
@@ -214,7 +242,7 @@ nav a {
     padding: 40px 30px;
 }
 
-/* Iconos unificados con el azul corporativo */
+/* Iconos de servicios normalizados con el azul corporativo de AURO */
 .service-card i {
     font-size: 3rem;
     color: #1d3557;
@@ -222,24 +250,27 @@ nav a {
 }
 
 .service-card p {
-    color: #666;
+    color: #666666;
 }
 
+/* Caja contenedora para el botón de cotización comercial */
 .services-cta {
     text-align: center;
     margin-top: 50px;
-    padding: 30px;
+    padding: 40px 20px;
     background: #f5f7fa;
     border-radius: 12px;
 }
 
 .services-cta p {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 1.2rem;
-    color: #444;
+    color: #444444;
 }
 
-/* PROYECTOS / SECTORES (TAMAÑO REDUCIDO) */
+/* ==========================================================================
+   6. SECCIÓN SECTORES / PROYECTOS (MÓDULOS COMPACTADOS)
+   ========================================================================== */
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -248,14 +279,14 @@ nav a {
 }
 
 .sector {
-    height: 240px; /* Reducido de 320px */
+    height: 240px; /* Altura optimizada compacta */
     border-radius: 12px;
     overflow: hidden;
     position: relative;
     background-size: cover;
     background-position: center;
-    transition: .4s;
-    flex: 1 1 240px;
+    transition: transform 0.4s;
+    flex: 1 1 260px; /* Estructura responsive idónea para celulares */
     max-width: 360px;
 }
 
@@ -263,21 +294,23 @@ nav a {
     transform: translateY(-5px);
 }
 
+/* Capa de degradado oscuro sobre la imagen para que el texto blanco resalte */
 .sector-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0, .75));
+    background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.75));
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; /* Coloca el título abajo de la tarjeta */
     padding: 20px;
 }
 
 .sector-overlay h3 {
     color: white;
-    font-size: 1.5rem; /* Ajustado proporcionalmente al nuevo tamaño */
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
+/* Clases específicas para asociar las imágenes correspondientes a cada sector */
 .mineria { background-image: url('assets/mineria.jpg'); }
 .industrial { background-image: url('assets/industrial.jpg'); }
 .energia { background-image: url('assets/energia.jpg'); }
@@ -285,9 +318,11 @@ nav a {
 .comercial { background-image: url('assets/comercial.jpg'); }
 .residential { background-image: url('assets/residencial.jpg'); }
 
-/* CONTACTO - FONDO AZUL NOCHE */
+/* ==========================================================================
+   7. SECCIÓN CONTACTAR & FOOTER (ALTO CONTRASTE)
+   ========================================================================== */
 .contact {
-    background: #14213D; /* Restaurado al fondo original antes del footer */
+    background: #14213D; /* Fondo azul noche profundo original */
     color: white;
     text-align: center;
     padding: 90px 20px;
@@ -308,6 +343,7 @@ nav a {
     align-items: center;
 }
 
+/* Estilo para los botones de contacto de alto contraste */
 .contact-btn {
     display: inline-flex;
     align-items: center;
@@ -318,11 +354,12 @@ nav a {
     border-radius: 25px;
     font-weight: 600;
     font-size: 1.1rem;
-    margin: 12px;
+    margin: 10px 0;
     color: #ffffff !important;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 290px;
+    width: 100%; /* Por defecto ocupan todo el ancho disponible en la caja del contenedor */
+    max-width: 380px; /* Límite para que no se estiren demasiado en PC */
     transition: all 0.3s ease;
 }
 
@@ -338,31 +375,61 @@ nav a {
     display: inline-block;
 }
 
-/* COLORES DE ICONOS EN BOTONES DE CONTACTO */
+/* Colores específicos de alta visibilidad para los iconos dentro de los botones de contacto */
 .contact-btn.whatsapp i { color: #25D366; }
 .contact-btn.instagram i { color: #f857a6; }
 .contact-btn.email i { color: #38bdf8; }
 
-/* FOOTER */
 footer {
     background: #0b1729;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 25px;
+    padding: 25px 20px;
+    font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* ==========================================================================
+   8. MEDIA QUERIES (ADAPTACIÓN ESPECÍFICA PARA DISPOSITIVOS MÓVILES)
+   ========================================================================== */
+/* Las reglas dentro de este bloque solo se activan en pantallas menores o iguales a 768px (Celulares y Tablets verticales) */
 @media(max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    /* Reduce la separación excesiva para pantallas táctiles cortas */
+    section {
+        padding: 60px 15px;
     }
 
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    /* Reducción proporcional del tamaño de letras en celulares */
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* Oculta los links de texto del menú clásico para prevenir amontonamientos en pantalla chica */
     nav ul {
         display: none;
     }
 
+    /* Hace que el logo de AURO tome una posición centralizada y balanceada en el móvil */
+    .nav-container {
+        justify-content: center;
+        padding: 12px 15px;
+    }
+
+    /* Modifica el ancho y espaciado de los botones táctiles de contacto */
     .contact-btn {
-        min-width: 100%;
-        margin: 8px 0;
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 12px 20px;
     }
 }
