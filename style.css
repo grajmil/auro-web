@@ -754,42 +754,37 @@ nav a:not(.btn-nav-cotizar):hover::after {
     line-height: 1.6;
 }
 
+/* Lista de herramientas tecnológicas — icono + etiqueta corta, sin descripción larga */
 .tool-list {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 26px;
+    flex-wrap: wrap;
+    gap: 18px;
     margin-bottom: 40px;
 }
 
 .tool-list li {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid var(--line-paper);
+    padding: 16px 22px;
 }
 
 .tool-list i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--brass);
-    margin-top: 4px;
-    width: 26px;
+    width: 22px;
     text-align: center;
     flex-shrink: 0;
 }
 
 .tool-list h4 {
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     text-transform: uppercase;
     color: var(--ink);
     font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.tool-list p {
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    line-height: 1.5;
 }
 
 .innovacion-quote {
@@ -1191,7 +1186,12 @@ footer {
         font-size: 0.95rem;
     }
 
-    .btn-nav-cotizar {
+    /* Se usa ".nav-menu a.btn-nav-cotizar" (no solo ".btn-nav-cotizar")
+       para que esta regla tenga más especificidad que ".nav-menu a" de
+       arriba, que fija width:100% a todos los links. Sin este ajuste,
+       ".nav-menu a" gana y el botón queda en 100% + el margen de 24px
+       de cada lado, desbordando la pantalla. */
+    .nav-menu a.btn-nav-cotizar {
         margin: 12px 24px 0;
         width: calc(100% - 48px);
         text-align: center;
